@@ -1,0 +1,5 @@
+FROM ubuntu:latest
+EXPOSE 8080
+RUN apt-get update && apt-get install -y wget curl ttyd
+RUN wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && chmod +x cloudflared-linux-amd64 && mv cloudflared-linux-amd64 /bin/cloudflared
+RUN ttyd --writable -p 7681 bash & cloudflared tunnel --url http://localhost:7681
