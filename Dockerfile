@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 #EXPOSE 8000
-RUN apt update && apt install curl
+RUN apt update && apt install curl -y
 RUN curl -sSf https://sshx.io/get | sh
 #RUN apt-get update && apt-get install -y wget curl ttyd
 #RUN wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && chmod +x cloudflared-linux-amd64 && mv cloudflared-linux-amd64 /bin/cloudflared
