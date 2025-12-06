@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 #EXPOSE 8000
-RUN apt update && apt install curl -y
+RUN apt update && apt install wget curl -y
 RUN curl -sSf https://sshx.io/get | sh
 RUN sshx
 #RUN apt-get update && apt-get install -y wget curl ttyd
