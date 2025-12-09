@@ -11,10 +11,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: depot/setup-action@v1
-      # Build ONLY (no push)
-      - name: Build Docker image with Depot
-        uses: depot/build-action@v1
-        with:
-          project: 6hrt50hp1f
-          context: .
-          file: ./Dockerfile
+      - run: |
+          depot build --project 6hrt50hp1f --file ./Dockerfile --context . --tag my-image:latest
